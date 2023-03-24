@@ -1,0 +1,59 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int R1, C1, R2, C2;
+    cin >> R1 >> C1;
+
+    int A[R1][C1];
+    for (int i = 0; i < R1; i++){
+        for(int j = 0; j < C1; j++){
+            cin >> A[i][j];
+        }
+    }
+
+    cin >> R2 >> C2;
+
+    int B[R2][C2];
+    for(int i = 0; i < R2; i++){
+        for (int j = 0; j < C2; j++){
+            cin >> B[i][j];
+        }
+    }
+
+    if(R1 != R2 || C1 != C2){
+        cout << "Error" << endl;
+        return 0;
+    }
+
+    int C[R1][C1];
+    for (int i = 0; i < R1; i++){
+        for (int j = 0; j < C1; j++){
+            C[i][j]= A[i][j] + B[i][j];
+        }
+    }
+
+    cout << "Matrix addition result: " << endl;
+    for (int i = 0; i < R1; i++){
+        for (int j = 0; j < C1; j++){
+            cout << C[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    for(int i = 0; i < R1; i++){
+        for (int j = 0; j < C1; j++){
+            C[i][j] = A[i][j] - B[i][j];
+        }
+    }
+
+    cout << "Matrix substraction result" << endl;
+    for (int i = 0; i < R1; i++){
+        for (int j = 0; j < C1; j++){
+            cout << C[i][j] << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
